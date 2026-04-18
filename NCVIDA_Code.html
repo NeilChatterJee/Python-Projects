@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoteRiders NC — Volunteer Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .box {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 24px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 20px;
+      color: #222;
+      margin: 0 0 4px 0;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 24px;
+    }
+    .question {
+      font-size: 15px;
+      font-weight: bold;
+      color: #222;
+      background: #f0f0f0;
+      padding: 14px 16px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .ask-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+    button {
+      display: block;
+      width: 100%;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #222;
+      cursor: pointer;
+      text-align: left;
+      margin-bottom: 8px;
+    }
+    button:hover { background: #efefef; }
+    .result-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 14px;
+    }
+    .good { color: #1a7a50; }
+    .doc-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #999;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      margin-top: 16px;
+    }
+    .doc-item {
+      font-size: 14px;
+      color: #222;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .fee-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+      color: #222;
+    }
+    .fee-badge {
+      background: #e0f5ec;
+      color: #1a7a50;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .note {
+      background: #fffbea;
+      border-left: 3px solid #f0b429;
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #555;
+      margin-top: 12px;
+    }
+    .info-box {
+      background: #eaf3ff;
+      border-left: 3px solid #4a90d9;
+      border-radius: 6px;
+      padding: 10px 12px;
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 14px;
+    }
+    .email-box {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-size: 13px;
+      color: #333;
+      line-height: 1.9;
+      margin-top: 8px;
+    }
+    .back-btn {
+      width: auto;
+      background: none;
+      border: none;
+      color: #888;
+      font-size: 13px;
+      padding: 0;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+    .back-btn:hover { color: #222; background: none; }
+    .reset-btn {
+      width: auto;
+      background: none;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      color: #888;
+      font-size: 13px;
+      padding: 6px 14px;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+    .reset-btn:hover { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h1>VoteRiders NC</h1>
+  <p class="subtitle">Volunteer guide — step-by-step client prompts</p>
+  <div id="screen"></div>
+</div>
+
+<script>
+
+  // HOW THIS WORKS:
+  // - Each screen is one function below.
+  // - go(screenFn) saves the current screen, then runs the new one.
+  // - goBack() goes back one step.
+  // - Every button calls go(some_screen_function).
+
+  var navHistory = [];
+
+  function go(fn) {
+    navHistory.push(currentScreen);
+    currentScreen = fn;
+    fn();
+  }
+
+  function goBack() {
+    if (navHistory.length > 0) {
+      currentScreen = navHistory.pop();
+      currentScreen();
+    }
+  }
+
+  function startOver() {
+    navHistory = [];
+    screen_start();
+  }
+
+  var currentScreen = null;
+
+  function show(html) {
+    document.getElementById("screen").innerHTML = html;
+  }
+
+  function backBtn() {
+    return '<button class="back-btn" onclick="goBack()">← Back</button>';
+  }
+
+  function resetBtn() {
+    return '<button class="reset-btn" onclick="startOver()">Start a new client</button>';
+  }
+
+  // ── START ──────────────────────────────────────────────────────────
+
+  function screen_start() {
+    currentScreen = screen_start;
+    show(
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">What does the client need help with today?</div>' +
+      '<button onclick="go(screen_dl_new_returning)">Driver\'s license (DL)</button>' +
+      '<button onclick="go(screen_id_new_returning)">State ID</button>'
+    );
+  }
+
+  // ── DRIVER\'S LICENSE PATH ─────────────────────────────────────────
+
+  function screen_dl_new_returning() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Do you need a new license, or are you a returning NC DMV customer?</div>' +
+      '<button onclick="go(screen_dl_new_result)">New customer — first DL in NC</button>' +
+      '<button onclick="go(screen_dl_returning_what)">Returning customer</button>'
+    );
+  }
+
+  function screen_dl_new_result() {
+    show(
+      backBtn() +
+      '<div class="result-title">Must visit DMV in person</div>' +
+      '<div class="doc-label">Documents needed</div>' +
+      '<div class="doc-item">✓ Proof of identity: birth certificate (or Atrium Health Medical Records)</div>' +
+      '<div class="doc-item">✓ Proof of SSN: Social Security card, or document with full SSN (W-2s accepted)</div>' +
+      '<div class="doc-item">✓ Proof of residency — regular DL: 1 piece of mail with name and NC address</div>' +
+      '<div class="doc-item">✓ Proof of residency — REAL ID DL: 2 pieces of mail with name and NC address</div>' +
+      dl_fees() +
+      resetBtn()
+    );
+  }
+
+  function screen_dl_returning_what() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">What do you need to do?</div>' +
+      '<button onclick="go(screen_dl_renew_know)">Renew my DL</button>' +
+      '<button onclick="go(screen_dl_replace_current)">Replace lost or stolen DL</button>' +
+      '<button onclick="go(screen_dl_error_num)">I got an error online</button>'
+    );
+  }
+
+  function screen_dl_renew_know() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Do you know your date of birth, Social Security number, and DL number?</div>' +
+      '<button onclick="go(screen_dl_renew_expired)">Yes — I have all three</button>' +
+      '<button onclick="go(screen_dl_renew_call)">No — doesn\'t have that information</button>'
+    );
+  }
+
+  function screen_dl_renew_expired() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is your DL expired less than 2 years?</div>' +
+      '<button onclick="go(screen_dl_renew_online)">Yes — less than 2 years expired (or still valid)</button>' +
+      '<button onclick="go(screen_dl_inperson)">No — expired 2 or more years ago</button>'
+    );
+  }
+
+  function screen_dl_renew_online() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Good news! You can renew online.</div>' +
+      dl_fees() +
+      '<div class="note">REAL ID reminder: if this is a REAL ID, the client must renew in person every other time.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_dl_renew_call() {
+    show(
+      backBtn() +
+      '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Were they able to get their information?</div>' +
+      '<button onclick="go(screen_dl_renew_expired)">Yes — they got their information</button>' +
+      '<button onclick="go(screen_dl_inperson)">No — they could not get it</button>'
+    );
+  }
+
+  function screen_dl_replace_current() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is your DL still current (not expired)?</div>' +
+      '<button onclick="go(screen_dl_replace_know)">Yes — DL is still current</button>' +
+      '<button onclick="go(screen_dl_inperson)">No — DL is expired</button>'
+    );
+  }
+
+  function screen_dl_replace_know() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Do you know your DL number, date of birth, and Social Security number?</div>' +
+      '<button onclick="go(screen_dl_replace_online)">Yes — I have all three</button>' +
+      '<button onclick="go(screen_dl_replace_call)">No — doesn\'t have that information</button>'
+    );
+  }
+
+  function screen_dl_replace_online() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Good news! You can replace your DL online.</div>' +
+      dl_fees() +
+      resetBtn()
+    );
+  }
+
+  function screen_dl_replace_call() {
+    show(
+      backBtn() +
+      '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Were they able to get their information?</div>' +
+      '<button onclick="go(screen_dl_replace_online)">Yes — they got their information</button>' +
+      '<button onclick="go(screen_dl_inperson)">No — they could not get it</button>'
+    );
+  }
+
+  function screen_dl_error_num() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the volunteer</div>' +
+      '<div class="question">Do you have the voter\'s DL number?</div>' +
+      '<button onclick="go(screen_dl_error_code)">Yes — I have the DL number</button>' +
+      '<button onclick="go(screen_dl_inperson)">No — I don\'t have the DL number</button>'
+    );
+  }
+
+  function screen_dl_error_code() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Use the error code lookup tool</div>' +
+      '<div class="question">What error code is the client seeing?</div>' +
+      '<button onclick="go(screen_dl_error4)">Error Code 4</button>' +
+      '<button onclick="go(screen_dl_inperson)">Any other error code</button>'
+    );
+  }
+
+  function screen_dl_error4() {
+    show(
+      backBtn() +
+      '<div class="result-title">Error Code 4 — Unhoused status</div>' +
+      '<div class="doc-label">Email Janet at VoteRiders</div>' +
+      '<div class="email-box">' +
+        '<strong>To:</strong> janet.volunteer@voteriders.org<br><br>' +
+        '<strong>Include:</strong><br>' +
+        '• Voter\'s name<br>' +
+        '• Date of birth<br>' +
+        '• Phone number<br>' +
+        '• DL number<br>' +
+        '• Current housing status' +
+      '</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_dl_inperson() {
+    show(
+      backBtn() +
+      '<div class="result-title">Must visit DMV in person</div>' +
+      '<div class="doc-label">Bring one of the following</div>' +
+      '<div class="doc-item">✓ DL, birth certificate, or Social Security card</div>' +
+      '<div class="doc-item">✓ OR proof of residency (shelter letter acceptable)</div>' +
+      resetBtn()
+    );
+  }
+
+  function dl_fees() {
+    return (
+      '<div class="doc-label">Fees — VoteRiders covers all costs</div>' +
+      '<div class="fee-row"><span>New / 8-year renewal</span><span class="fee-badge">$52.00</span></div>' +
+      '<div class="fee-row"><span>5-year renewal</span><span class="fee-badge">$32.50</span></div>' +
+      '<div class="fee-row"><span>Duplicate (replacement)</span><span class="fee-badge">$16.75</span></div>'
+    );
+  }
+
+  // ── STATE ID PATH ──────────────────────────────────────────────────
+
+  function screen_id_new_returning() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Do you need a new State ID, or are you a returning NC DMV customer?</div>' +
+      '<button onclick="go(screen_id_new_result)">New customer — first State ID in NC</button>' +
+      '<button onclick="go(screen_id_returning_what)">Returning customer</button>'
+    );
+  }
+
+  function screen_id_new_result() {
+    show(
+      backBtn() +
+      '<div class="result-title">Must visit DMV in person</div>' +
+      '<div class="doc-label">Documents needed</div>' +
+      '<div class="doc-item">✓ Proof of identity: birth certificate (or Atrium Health Medical Records)</div>' +
+      '<div class="doc-item">✓ Proof of SSN: Social Security card, or document with full SSN (W-2s accepted)</div>' +
+      '<div class="doc-item">✓ Proof of residency — regular ID: 1 piece of mail with name and NC address</div>' +
+      '<div class="doc-item">✓ Proof of residency — REAL ID: 2 pieces of mail with name and NC address</div>' +
+      id_fees() +
+      resetBtn()
+    );
+  }
+
+  function screen_id_returning_what() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">What do you need to do?</div>' +
+      '<button onclick="go(screen_id_renew_know)">Renew my ID</button>' +
+      '<button onclick="go(screen_id_replace_current)">Replace lost or stolen ID</button>' +
+      '<button onclick="go(screen_id_error_num)">I got an error online</button>'
+    );
+  }
+
+  function screen_id_renew_know() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Do you know your date of birth, Social Security number, and ID number?</div>' +
+      '<button onclick="go(screen_id_renew_expired)">Yes — I have all three</button>' +
+      '<button onclick="go(screen_id_renew_call)">No — doesn\'t have that information</button>'
+    );
+  }
+
+  function screen_id_renew_expired() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is your ID expired less than 1 year?</div>' +
+      '<button onclick="go(screen_id_renew_online)">Yes — less than 1 year expired (or still valid)</button>' +
+      '<button onclick="go(screen_id_inperson)">No — expired 1 or more years ago</button>'
+    );
+  }
+
+  function screen_id_renew_online() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Good news! You can renew online.</div>' +
+      id_fees() +
+      '<div class="note">REAL ID reminder: if this is a REAL ID, the client must renew in person every other time.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_id_renew_call() {
+    show(
+      backBtn() +
+      '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Were they able to get their information?</div>' +
+      '<button onclick="go(screen_id_renew_expired)">Yes — they got their information</button>' +
+      '<button onclick="go(screen_id_inperson)">No — they could not get it</button>'
+    );
+  }
+
+  function screen_id_replace_current() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is your ID still current (not expired)?</div>' +
+      '<button onclick="go(screen_id_replace_know)">Yes — ID is still current</button>' +
+      '<button onclick="go(screen_id_inperson)">No — ID is expired</button>'
+    );
+  }
+
+  function screen_id_replace_know() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Do you know your ID number, date of birth, and Social Security number?</div>' +
+      '<button onclick="go(screen_id_replace_online)">Yes — I have all three</button>' +
+      '<button onclick="go(screen_id_replace_call)">No — doesn\'t have that information</button>'
+    );
+  }
+
+  function screen_id_replace_online() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Good news! You can replace your ID online.</div>' +
+      id_fees() +
+      resetBtn()
+    );
+  }
+
+  function screen_id_replace_call() {
+    show(
+      backBtn() +
+      '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Were they able to get their information?</div>' +
+      '<button onclick="go(screen_id_replace_online)">Yes — they got their information</button>' +
+      '<button onclick="go(screen_id_inperson)">No — they could not get it</button>'
+    );
+  }
+
+  function screen_id_error_num() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the volunteer</div>' +
+      '<div class="question">Do you have the voter\'s ID number?</div>' +
+      '<button onclick="go(screen_id_error_code)">Yes — I have the ID number</button>' +
+      '<button onclick="go(screen_id_inperson)">No — I don\'t have the ID number</button>'
+    );
+  }
+
+  function screen_id_error_code() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Use the error code lookup tool</div>' +
+      '<div class="question">What error code is the client seeing?</div>' +
+      '<button onclick="go(screen_id_error4)">Error Code 4</button>' +
+      '<button onclick="go(screen_id_inperson)">Any other error code</button>'
+    );
+  }
+
+  function screen_id_error4() {
+    show(
+      backBtn() +
+      '<div class="result-title">Error Code 4 — Unhoused status</div>' +
+      '<div class="doc-label">Email Janet at VoteRiders</div>' +
+      '<div class="email-box">' +
+        '<strong>To:</strong> janet.volunteer@voteriders.org<br><br>' +
+        '<strong>Include:</strong><br>' +
+        '• Voter\'s name<br>' +
+        '• Date of birth<br>' +
+        '• Phone number<br>' +
+        '• ID number<br>' +
+        '• Current housing status' +
+      '</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_id_inperson() {
+    show(
+      backBtn() +
+      '<div class="result-title">Must visit DMV in person</div>' +
+      '<div class="doc-label">Bring one of the following</div>' +
+      '<div class="doc-item">✓ ID, birth certificate, or Social Security card</div>' +
+      '<div class="doc-item">✓ OR proof of residency (shelter letter acceptable)</div>' +
+      id_fees() +
+      resetBtn()
+    );
+  }
+
+  function id_fees() {
+    return (
+      '<div class="doc-label">Fee — VoteRiders covers all costs</div>' +
+      '<div class="fee-row"><span>NC State ID (age 17+)</span><span class="fee-badge">FREE</span></div>'
+    );
+  }
+
+  // ── LAUNCH ─────────────────────────────────────────────────────────
+  screen_start();
+
+</script>
+</body>
+</html>
