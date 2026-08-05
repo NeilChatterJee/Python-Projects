@@ -1,159 +1,221 @@
+
+
+Skip to content
+Using Gmail with screen readers
+
+9 of 978
+deploy this
+Inbox
+
+Rajyashri Vishnoi
+Attachments
+Mon, Jun 8, 1:48 PM (7 days ago)
+to me
+
+
+ One attachment
+  •  Scanned by Gmail
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VoteRiders NC — Volunteer Guide</title>
+  <title>VoteRiders NC - Volunteer Assistance Tool</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: #f0f4f8;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+    }
+    .header {
+      background: #0C447C;
+      padding: 14px 40px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .header-brand {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: white;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .header-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .header-tagline {
+      font-size: 16px;
+      font-weight: 700;
+      color: #B5D4F4;
+      line-height: 1.3;
     }
     .box {
       background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 24px;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 20px;
-      color: #222;
-      margin: 0 0 4px 0;
-    }
-    .subtitle {
-      font-size: 13px;
-      color: #888;
-      margin-bottom: 24px;
+      padding: 16px 40px;
+      box-sizing: border-box;
     }
     .question {
-      font-size: 15px;
-      font-weight: bold;
-      color: #222;
-      background: #f0f0f0;
-      padding: 14px 16px;
-      border-radius: 8px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0C447C;
+      background: #E6F1FB;
+      padding: 12px 20px;
+      border-radius: 10px;
+      border-left: 4px solid #378ADD;
       margin-bottom: 12px;
     }
     .ask-label {
-      font-size: 11px;
+      font-size: 13px;
+      font-weight: 700;
       text-transform: uppercase;
-      color: #999;
-      margin-bottom: 6px;
-      letter-spacing: 0.05em;
+      color: #378ADD;
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+    }
+    .btn-group {
+      width: 60%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
     button {
       display: block;
       width: 100%;
-      background: #f9f9f9;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 14px;
-      color: #222;
+      background: white;
+      border: 2px solid #B5D4F4;
+      border-radius: 10px;
+      padding: 0 20px;
+      font-size: 17px;
+      font-weight: 700;
+      color: #0C447C;
       cursor: pointer;
-      text-align: left;
+      text-align: center;
       margin-bottom: 8px;
+      box-sizing: border-box;
+      height: 48px;
+      line-height: 48px;
     }
-    button:hover { background: #efefef; }
+    button:hover { background: #E6F1FB; border-color: #378ADD; }
     .result-title {
-      font-size: 16px;
-      font-weight: bold;
-      color: #222;
-      margin-bottom: 14px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #0C447C;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #B5D4F4;
     }
-    .good { color: #1a7a50; }
+    .good { color: #0F6E56; }
     .doc-label {
-      font-size: 11px;
+      font-size: 13px;
+      font-weight: 700;
       text-transform: uppercase;
-      color: #999;
-      letter-spacing: 0.05em;
+      color: #378ADD;
+      letter-spacing: 0.06em;
       margin-bottom: 8px;
-      margin-top: 16px;
+      margin-top: 18px;
     }
     .doc-item {
-      font-size: 14px;
-      color: #222;
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0C447C;
+      padding: 10px 0;
+      border-bottom: 1px solid #B5D4F4;
     }
     .fee-row {
       display: flex;
       justify-content: space-between;
-      font-size: 13px;
-      padding: 5px 0;
-      border-bottom: 1px solid #eee;
-      color: #222;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 8px 0;
+      border-bottom: 1px solid #B5D4F4;
+      color: #0C447C;
     }
     .fee-badge {
-      background: #e0f5ec;
-      color: #1a7a50;
+      background: #E6F1FB;
+      color: #0C447C;
       border-radius: 6px;
-      padding: 2px 8px;
-      font-size: 12px;
-      font-weight: bold;
+      padding: 2px 10px;
+      font-size: 14px;
+      font-weight: 700;
+      border: 1px solid #B5D4F4;
     }
     .note {
       background: #fffbea;
-      border-left: 3px solid #f0b429;
-      border-radius: 6px;
-      padding: 10px 12px;
-      font-size: 13px;
-      color: #555;
-      margin-top: 12px;
+      border-left: 4px solid #f0b429;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #7a5c00;
+      margin-top: 14px;
     }
     .info-box {
-      background: #eaf3ff;
-      border-left: 3px solid #4a90d9;
-      border-radius: 6px;
-      padding: 10px 12px;
-      font-size: 13px;
-      color: #333;
+      background: #E6F1FB;
+      border-left: 4px solid #378ADD;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0C447C;
       margin-bottom: 14px;
     }
     .email-box {
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 12px 14px;
-      font-size: 13px;
-      color: #333;
-      line-height: 1.9;
-      margin-top: 8px;
+      background: #E6F1FB;
+      border: 2px solid #B5D4F4;
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0C447C;
+      line-height: 2;
+      margin-top: 10px;
     }
     .back-btn {
       width: auto;
       background: none;
-      border: none;
-      color: #888;
-      font-size: 13px;
-      padding: 0;
-      margin-bottom: 16px;
+      border: 2px solid #B5D4F4;
+      border-radius: 8px;
+      color: #378ADD;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 6px 16px;
+      margin-bottom: 0;
       cursor: pointer;
     }
-    .back-btn:hover { color: #222; background: none; }
+    .back-btn:hover { background: #E6F1FB; color: #0C447C; }
     .reset-btn {
       width: auto;
       background: none;
-      border: 1px solid #ccc;
+      border: 2px solid #B5D4F4;
       border-radius: 8px;
-      color: #888;
-      font-size: 13px;
-      padding: 6px 14px;
-      margin-top: 16px;
+      color: #378ADD;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 8px 18px;
+      margin-top: 18px;
       cursor: pointer;
     }
-    .reset-btn:hover { background: #f0f0f0; }
+    .reset-btn:hover { background: #E6F1FB; color: #0C447C; }
   </style>
 </head>
 <body>
 
+<div class="header">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+    <div>
+      <div class="header-brand">VoteRiders NC - Volunteer Assistance Tool</div>
+      <div class="header-tagline">Your step-by-step guide to helping every client cross the finish line.</div>
+    </div>
+  </div>
+</div>
+
 <div class="box">
-  <h1>VoteRiders NC</h1>
-  <p class="subtitle">Volunteer guide — step-by-step client prompts</p>
   <div id="screen"></div>
 </div>
 
@@ -192,7 +254,10 @@
   }
 
   function backBtn() {
-    return '<button class="back-btn" onclick="goBack()">← Back</button>';
+    return '<div style="display:flex; gap:10px; margin-bottom:16px;">' +
+      '<button class="back-btn" style="margin-bottom:0" onclick="goBack()">← Back</button>' +
+      '<button class="back-btn" style="margin-bottom:0" onclick="startOver()">⌂ Home</button>' +
+      '</div>';
   }
 
   function resetBtn() {
@@ -206,8 +271,15 @@
     show(
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">What does the client need help with today?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_new_returning)">Driver\'s license (DL)</button>' +
-      '<button onclick="go(screen_id_new_returning)">State ID</button>'
+      '<button onclick="go(screen_id_new_returning)">State ID</button>' +
+      '<button onclick="go(screen_bc_adoption)">Birth certificate</button>' +
+      '<button onclick="go(screen_ss_charlotte)">Social Security card</button>' +
+      '<button onclick="go(screen_tr_destination)">Transportation</button>' +
+      '<button onclick="go(screen_appt_missed)">DMV Appointments</button>' +
+      '<button onclick="go(screen_vr_what)">Voter Registration & Voting Rights</button>' +
+      '</div>'
     );
   }
 
@@ -218,8 +290,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Do you need a new license, or are you a returning NC DMV customer?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_new_result)">New customer — first DL in NC</button>' +
-      '<button onclick="go(screen_dl_returning_what)">Returning customer</button>'
+      '<button onclick="go(screen_dl_returning_what)">Returning customer</button>' +
+      '</div>'
     );
   }
 
@@ -242,8 +316,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">What do you need to do?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_renew_know)">Renew my DL</button>' +
       '<button onclick="go(screen_dl_replace_current)">Replace lost or stolen DL</button>' +
+      '</div>' +
       '<button onclick="go(screen_dl_error_num)">I got an error online</button>'
     );
   }
@@ -253,8 +329,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Do you know your date of birth, Social Security number, and DL number?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_renew_expired)">Yes — I have all three</button>' +
-      '<button onclick="go(screen_dl_renew_call)">No — doesn\'t have that information</button>'
+      '<button onclick="go(screen_dl_renew_call)">No — doesn\'t have that information</button>' +
+      '</div>'
     );
   }
 
@@ -263,8 +341,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Is your DL expired less than 2 years?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_renew_online)">Yes — less than 2 years expired (or still valid)</button>' +
-      '<button onclick="go(screen_dl_inperson)">No — expired 2 or more years ago</button>'
+      '<button onclick="go(screen_dl_inperson)">No — expired 2 or more years ago</button>' +
+      '</div>'
     );
   }
 
@@ -284,8 +364,10 @@
       '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Were they able to get their information?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_renew_expired)">Yes — they got their information</button>' +
-      '<button onclick="go(screen_dl_inperson)">No — they could not get it</button>'
+      '<button onclick="go(screen_dl_inperson)">No — they could not get it</button>' +
+      '</div>'
     );
   }
 
@@ -294,8 +376,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Is your DL still current (not expired)?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_replace_know)">Yes — DL is still current</button>' +
-      '<button onclick="go(screen_dl_inperson)">No — DL is expired</button>'
+      '<button onclick="go(screen_dl_inperson)">No — DL is expired</button>' +
+      '</div>'
     );
   }
 
@@ -304,8 +388,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Do you know your DL number, date of birth, and Social Security number?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_replace_online)">Yes — I have all three</button>' +
-      '<button onclick="go(screen_dl_replace_call)">No — doesn\'t have that information</button>'
+      '<button onclick="go(screen_dl_replace_call)">No — doesn\'t have that information</button>' +
+      '</div>'
     );
   }
 
@@ -324,8 +410,10 @@
       '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Were they able to get their information?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_replace_online)">Yes — they got their information</button>' +
-      '<button onclick="go(screen_dl_inperson)">No — they could not get it</button>'
+      '<button onclick="go(screen_dl_inperson)">No — they could not get it</button>' +
+      '</div>'
     );
   }
 
@@ -334,8 +422,10 @@
       backBtn() +
       '<div class="ask-label">Ask the volunteer</div>' +
       '<div class="question">Do you have the voter\'s DL number?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_error_code)">Yes — I have the DL number</button>' +
-      '<button onclick="go(screen_dl_inperson)">No — I don\'t have the DL number</button>'
+      '<button onclick="go(screen_dl_inperson)">No — I don\'t have the DL number</button>' +
+      '</div>'
     );
   }
 
@@ -344,8 +434,10 @@
       backBtn() +
       '<div class="ask-label">Use the error code lookup tool</div>' +
       '<div class="question">What error code is the client seeing?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_dl_error4)">Error Code 4</button>' +
-      '<button onclick="go(screen_dl_inperson)">Any other error code</button>'
+      '<button onclick="go(screen_dl_inperson)">Any other error code</button>' +
+      '</div>'
     );
   }
 
@@ -394,8 +486,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Do you need a new State ID, or are you a returning NC DMV customer?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_new_result)">New customer — first State ID in NC</button>' +
-      '<button onclick="go(screen_id_returning_what)">Returning customer</button>'
+      '<button onclick="go(screen_id_returning_what)">Returning customer</button>' +
+      '</div>'
     );
   }
 
@@ -418,8 +512,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">What do you need to do?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_renew_know)">Renew my ID</button>' +
       '<button onclick="go(screen_id_replace_current)">Replace lost or stolen ID</button>' +
+      '</div>' +
       '<button onclick="go(screen_id_error_num)">I got an error online</button>'
     );
   }
@@ -429,8 +525,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Do you know your date of birth, Social Security number, and ID number?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_renew_expired)">Yes — I have all three</button>' +
-      '<button onclick="go(screen_id_renew_call)">No — doesn\'t have that information</button>'
+      '<button onclick="go(screen_id_renew_call)">No — doesn\'t have that information</button>' +
+      '</div>'
     );
   }
 
@@ -439,8 +537,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Is your ID expired less than 1 year?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_renew_online)">Yes — less than 1 year expired (or still valid)</button>' +
-      '<button onclick="go(screen_id_inperson)">No — expired 1 or more years ago</button>'
+      '<button onclick="go(screen_id_inperson)">No — expired 1 or more years ago</button>' +
+      '</div>'
     );
   }
 
@@ -460,8 +560,10 @@
       '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Were they able to get their information?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_renew_expired)">Yes — they got their information</button>' +
-      '<button onclick="go(screen_id_inperson)">No — they could not get it</button>'
+      '<button onclick="go(screen_id_inperson)">No — they could not get it</button>' +
+      '</div>'
     );
   }
 
@@ -470,8 +572,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Is your ID still current (not expired)?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_replace_know)">Yes — ID is still current</button>' +
-      '<button onclick="go(screen_id_inperson)">No — ID is expired</button>'
+      '<button onclick="go(screen_id_inperson)">No — ID is expired</button>' +
+      '</div>'
     );
   }
 
@@ -480,8 +584,10 @@
       backBtn() +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Do you know your ID number, date of birth, and Social Security number?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_replace_online)">Yes — I have all three</button>' +
-      '<button onclick="go(screen_id_replace_call)">No — doesn\'t have that information</button>'
+      '<button onclick="go(screen_id_replace_call)">No — doesn\'t have that information</button>' +
+      '</div>'
     );
   }
 
@@ -500,8 +606,10 @@
       '<div class="info-box">Ask the client to call Raleigh DMV: <strong>919-715-7000</strong> — press 0 to reach someone.</div>' +
       '<div class="ask-label">Ask the client</div>' +
       '<div class="question">Were they able to get their information?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_replace_online)">Yes — they got their information</button>' +
-      '<button onclick="go(screen_id_inperson)">No — they could not get it</button>'
+      '<button onclick="go(screen_id_inperson)">No — they could not get it</button>' +
+      '</div>'
     );
   }
 
@@ -510,8 +618,10 @@
       backBtn() +
       '<div class="ask-label">Ask the volunteer</div>' +
       '<div class="question">Do you have the voter\'s ID number?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_error_code)">Yes — I have the ID number</button>' +
-      '<button onclick="go(screen_id_inperson)">No — I don\'t have the ID number</button>'
+      '<button onclick="go(screen_id_inperson)">No — I don\'t have the ID number</button>' +
+      '</div>'
     );
   }
 
@@ -520,8 +630,10 @@
       backBtn() +
       '<div class="ask-label">Use the error code lookup tool</div>' +
       '<div class="question">What error code is the client seeing?</div>' +
+      '<div class="btn-group">' +
       '<button onclick="go(screen_id_error4)">Error Code 4</button>' +
-      '<button onclick="go(screen_id_inperson)">Any other error code</button>'
+      '<button onclick="go(screen_id_inperson)">Any other error code</button>' +
+      '</div>'
     );
   }
 
@@ -562,9 +674,697 @@
     );
   }
 
+  // ── BIRTH CERTIFICATE PATH ─────────────────────────────────────────
+
+  function screen_bc_adoption() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is this birth certificate for an adoption?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_bc_adoption_result)">Yes — this is for an adoption</button>' +
+      '<button onclick="go(screen_bc_has_id)">No — standard order</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_bc_adoption_result() {
+    show(
+      backBtn() +
+      '<div class="result-title">Adoption — order from the STATE of NC</div>' +
+      '<div class="info-box">For adoptions, the birth certificate must be ordered from the <strong>State of NC</strong>, not the county.</div>' +
+      '<div class="info-box">For further help with adoption orders, contact Miriam at <strong>miriam@voteriders.org</strong></div>' +
+      bc_expedited() +
+      resetBtn()
+    );
+  }
+
+  function screen_bc_has_id() {
+    show(
+      backBtn() +
+      '<div class="info-box">Order must be placed with the <strong>county of birth</strong>, not the state. Most counties require an ID upload to complete the order.</div>' +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Does the voter have an ID to upload?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_bc_zendesk)">Yes — they have an ID</button>' +
+      '<button onclick="go(screen_bc_mecklenburg)">No — they don\'t have an ID</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_bc_zendesk() {
+    show(
+      backBtn() +
+      '<div class="result-title">Upload ID to place the order</div>' +
+      '<div class="doc-item">✓ Use the Zendesk form to upload ID — it is more secure</div>' +
+      '<div class="doc-item">✓ Avoid uploading by text or email — less secure</div>' +
+      bc_expedited()
+    );
+  }
+
+  function screen_bc_mecklenburg() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is the voter in Mecklenburg County?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_bc_meck_how)">Yes — they are in Mecklenburg County</button>' +
+      '<button onclick="go(screen_bc_family)">No — they are in a different county</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_bc_meck_how() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">How would they like to order?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_bc_meck_mail)">Mail application</button>' +
+      '<button onclick="go(screen_bc_meck_online)">Online order</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_bc_meck_mail() {
+    show(
+      backBtn() +
+      '<div class="result-title">Mail application — no ID required</div>' +
+      '<div class="info-box">No ID required for mail applications in Mecklenburg County.</div>' +
+      '<div class="info-box">Contact Miriam at <strong>miriam@voteriders.org</strong> for assistance.</div>' +
+      bc_expedited()
+    );
+  }
+
+  function screen_bc_meck_online() {
+    show(
+      backBtn() +
+      '<div class="result-title">Online order — use VoteRiders letterhead</div>' +
+      '<div class="info-box">Attach your VoteRiders ID on letterhead explaining you are assisting an individual without ID.</div>' +
+      '<div class="info-box">Contact Miriam at <strong>miriam@voteriders.org</strong> for assistance.</div>' +
+      bc_expedited()
+    );
+  }
+
+  function screen_bc_family() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is there a family member who can apply on the voter\'s behalf?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_bc_family_yes)">Yes — a family member can help</button>' +
+      '<button onclick="go(screen_bc_probono)">No — no family member available</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_bc_family_yes() {
+    show(
+      backBtn() +
+      '<div class="result-title">Family member can submit the application</div>' +
+      '<div class="info-box">A family member can apply for the birth certificate on the voter\'s behalf.</div>' +
+      bc_expedited()
+    );
+  }
+
+  function screen_bc_probono() {
+    show(
+      backBtn() +
+      '<div class="result-title">Request pro bono counsel</div>' +
+      '<div class="info-box">No ID and no family member available. Please request pro bono counsel for this case.</div>' +
+      '<div class="info-box">Contact Miriam at <strong>miriam@voteriders.org</strong> for next steps.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_bc_expedited_check() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is there an upcoming job or housing deadline that requires the birth certificate urgently?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_bc_expedited_yes)">Yes — there is an urgent deadline</button>' +
+      '<button onclick="go(screen_bc_expedited_no)">No — no urgent deadline</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_bc_expedited_yes() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Expedited shipping approved</div>' +
+      '<div class="info-box">VoteRiders will cover the cost of expedited shipping due to the upcoming deadline.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_bc_expedited_no() {
+    show(
+      backBtn() +
+      '<div class="result-title">Standard shipping only</div>' +
+      '<div class="info-box">Expedited shipping is not covered without a material job or housing deadline. Standard shipping will be used.</div>' +
+      resetBtn()
+    );
+  }
+
+  function bc_expedited() {
+    return (
+      '<div class="note">VoteRiders covers the cost of birth certificates needed for ID/DL, housing, or employment.</div>' +
+      '<button onclick="go(screen_bc_expedited_check)" style="margin-top:14px">Next: Check shipping speed</button>'
+    );
+  }
+
+  // ── SOCIAL SECURITY CARD PATH ──────────────────────────────────────
+
+  function screen_ss_charlotte() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is the voter located in Charlotte?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_ss_method_charlotte)">Yes — they are in Charlotte</button>' +
+      '<button onclick="go(screen_ss_method_other)">No — they are outside Charlotte</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_ss_method_charlotte() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Which method would they like to try?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_ss_online)">Online — set up SSA account</button>' +
+      '<button onclick="go(screen_ss_inperson_id)">In-person — local SSA office</button>' +
+      '</div>' +
+      '<button onclick="go(screen_ss_roofabove_id)">Roof Above Virtual SSA Clinic</button>'
+    );
+  }
+
+  function screen_ss_method_other() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Which method would they like to try?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_ss_online)">Online — set up SSA account</button>' +
+      '<button onclick="go(screen_ss_inperson_id)">In-person — local SSA office</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_ss_online() {
+    show(
+      backBtn() +
+      '<div class="result-title">Online SSA account replacement</div>' +
+      '<div class="info-box">The voter can set up an SSA account at <strong>ssa.gov</strong> and order a replacement card online.</div>' +
+      '<div class="note">Note: This frequently does not work. If it fails, come back and try the in-person option.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_ss_inperson_id() {
+    show(
+      backBtn() +
+      '<div class="info-box">The voter must call their local SSA office to schedule an appointment. They cannot walk in without one.</div>' +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Does the voter have a current physical state ID or DL (any state)? No temporary IDs accepted.</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_ss_inperson_result)">Yes — they have a current physical ID or DL</button>' +
+      '<button onclick="go(screen_ss_inperson_alt)">No — they do not have one</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_ss_inperson_result() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Ready for in-person SSA appointment</div>' +
+      '<div class="doc-item">✓ Call local SSA office to schedule appointment (local numbers have shorter hold times)</div>' +
+      '<div class="doc-item">✓ Bring current physical state ID or DL (any state) — no temporary IDs</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_ss_inperson_alt() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Do they have a certified medical or demographic record (must be original with signature)?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_ss_inperson_record)">Yes — they have a certified record</button>' +
+      '<button onclick="go(screen_ss_atrium)">No — they do not have one</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_ss_inperson_record() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Ready for in-person SSA appointment</div>' +
+      '<div class="doc-item">✓ Call local SSA office to schedule appointment</div>' +
+      '<div class="doc-item">✓ Bring original certified medical or demographic record with signature</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_ss_atrium() {
+    show(
+      backBtn() +
+      '<div class="result-title">Atrium Health Demographic Records</div>' +
+      '<div class="info-box">If the voter is a patient of any Atrium Health facility, they may be able to get a demographic record to use at the SSA office.</div>' +
+      '<div class="info-box">Contact Miriam for assistance: <strong>miriam@voteriders.org</strong></div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_ss_roofabove_id() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Does the voter have a current physical unexpired ID or DL — from any state EXCEPT MN, NV, NH, OK, or WV?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_ss_roofabove_schedule)">Yes — they have a qualifying ID</button>' +
+      '<button onclick="go(screen_ss_roofabove_noid)">No — they do not have a qualifying ID</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_ss_roofabove_schedule() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Roof Above Virtual SSA Clinic</div>' +
+      '<div class="doc-item">✓ Location: 945 N. College St., Day Services Center</div>' +
+      '<div class="doc-item">✓ Wednesdays and Thursdays, 1:30–2:30 PM sharp</div>' +
+      '<div class="doc-item">✓ Arrive by 1:30 PM — facility may be closed for cleaning until then</div>' +
+      '<div class="doc-item">✓ Pre-registered voters have priority</div>' +
+      '<div class="doc-label">Contact Michella Palmer to confirm availability</div>' +
+      '<div class="email-box">' +
+        '<strong>Text (preferred):</strong> 717-315-3024<br>' +
+        '<strong>Email:</strong> mpalmer@roofabove.org<br><br>' +
+        '<strong>Provide:</strong><br>' +
+        '• Voter name<br>' +
+        '• Last 4 digits of SSN<br>' +
+        '• Desired clinic date' +
+      '</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_ss_roofabove_noid() {
+    show(
+      backBtn() +
+      '<div class="result-title">Cannot use Roof Above Clinic without qualifying ID</div>' +
+      '<div class="note">This clinic requires a current physical unexpired ID or DL from any state except MN, NV, NH, OK, or WV.</div>' +
+      '<div class="info-box">Please go back and try the online or in-person SSA office options instead.</div>' +
+      '<button onclick="go(screen_ss_method_charlotte)">Go back to method selection</button>' +
+      resetBtn()
+    );
+  }
+
+  // ── TRANSPORTATION PATH ────────────────────────────────────────────
+
+  function screen_tr_destination() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Where does the voter need a ride to?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_24hrs)">DMV — eligible for a ride</button>' +
+      '<button onclick="go(screen_tr_24hrs)">Social Security Administration — eligible for a ride</button>' +
+      '</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_24hrs)">Medical office for demographic records — eligible for a ride</button>' +
+      '<button onclick="go(screen_tr_noteligible)">Somewhere else — not eligible</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_tr_noteligible() {
+    show(
+      backBtn() +
+      '<div class="result-title">Ride not covered</div>' +
+      '<div class="info-box">VoteRiders only provides free rides to DMV, Social Security Administration, and medical offices for demographic records. No rides for other purposes.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_tr_24hrs() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is the appointment less than 24 hours away?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_toosoon)">Yes — less than 24 hours away</button>' +
+      '<button onclick="go(screen_tr_48hrs)">No — more than 24 hours away</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_tr_toosoon() {
+    show(
+      backBtn() +
+      '<div class="result-title">Cannot schedule this ride</div>' +
+      '<div class="info-box">Rides cannot be added with less than 24 hours notice. Please ask the voter to contact us as soon as possible next time.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_tr_48hrs() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is the appointment less than 48 hours away?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_notify_manager)">Yes — less than 48 hours away</button>' +
+      '<button onclick="go(screen_tr_phone)">No — more than 48 hours away</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_tr_notify_manager() {
+    show(
+      backBtn() +
+      '<div class="result-title">Notify Ride Manager first</div>' +
+      '<div class="info-box">Rides added less than 48 hours before the appointment require notification to the Ride Manager for that day before proceeding.</div>' +
+      '<button onclick="go(screen_tr_phone)">Ride Manager notified — continue</button>' +
+      resetBtn()
+    );
+  }
+
+  function screen_tr_phone() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Does the voter have a reliable phone contact?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_disability)">Yes — they have a reliable phone</button>' +
+      '<button onclick="go(screen_tr_nophone)">No — they do not have a phone</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_tr_nophone() {
+    show(
+      backBtn() +
+      '<div class="result-title">Phone required for ride</div>' +
+      '<div class="info-box">The voter must have a reliable phone contact to receive a ride. Please help them arrange a phone contact before scheduling.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_tr_disability() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Does the voter have a disability requiring accessible transportation?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_disability_yes)">Yes — they need accessible transport</button>' +
+      '<button onclick="go(screen_tr_rural)">No — standard ride is fine</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_tr_disability_yes() {
+    show(
+      backBtn() +
+      '<div class="result-title">Contact NC State Director</div>' +
+      '<div class="info-box">Contact the NC State Director via Slack or email to coordinate accessible transportation with Disability Rights NC.</div>' +
+      '<div class="info-box">NC State Director: <strong>sheena@voteriders.org</strong></div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_tr_rural() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is the voter in a rural area where rideshare is unavailable?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_rural_yes)">Yes — no rideshare available</button>' +
+      '<button onclick="go(screen_tr_phones_allowed)">No — rideshare is available</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_tr_rural_yes() {
+    show(
+      backBtn() +
+      '<div class="result-title">Contact Miriam or State Director</div>' +
+      '<div class="info-box">Rural areas are handled case by case. Contact the NC Organizer or State Director for support.</div>' +
+      '<div class="info-box">Miriam: <strong>miriam@voteriders.org</strong></div>' +
+      '<div class="info-box">Sheena (State Director): <strong>sheena@voteriders.org</strong></div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_tr_phones_allowed() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Is the voter at a location where phones are not allowed (e.g. shelter, facility)?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_tr_nophone_location)">Yes — phones not allowed at their location</button>' +
+      '<button onclick="go(screen_tr_ridesheet)">No — phones are allowed</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_tr_nophone_location() {
+    show(
+      backBtn() +
+      '<div class="result-title">Confirm these details with the voter before leaving</div>' +
+      '<div class="doc-item">✓ Day and time of appointment</div>' +
+      '<div class="doc-item">✓ Pick-up time</div>' +
+      '<div class="doc-item">✓ Where to wait for Uber/Lyft</div>' +
+      '<div class="note">Return transportation may be challenging — check bus options as a backup.</div>' +
+      '<button onclick="go(screen_tr_ridesheet)">Confirmed — continue to ride sheet</button>' +
+      resetBtn()
+    );
+  }
+
+  function screen_tr_ridesheet() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Ready to schedule ride</div>' +
+      '<div class="doc-label">Enter all of the following on the ride sheet</div>' +
+      '<div class="doc-item">✓ Appointment day and time</div>' +
+      '<div class="doc-item">✓ Appointment number (or walk-in details)</div>' +
+      '<div class="doc-item">✓ Pick-up time and location</div>' +
+      '<div class="note">Make sure entries are color-coded and in correct date/time order on the ride sheet.</div>' +
+      '<div class="doc-label">No-show policy — remind the voter</div>' +
+      '<div class="doc-item">• First missed ride: no penalty</div>' +
+      '<div class="doc-item">• Two missed rides: may result in future ride restrictions</div>' +
+      resetBtn()
+    );
+  }
+
+  // ── DMV APPOINTMENTS PATH ──────────────────────────────────────────
+
+  function screen_appt_missed() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Has the voter missed any previous DMV appointments?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_appt_missed_how_many)">Yes — they have missed appointments</button>' +
+      '<button onclick="go(screen_appt_schedule)">No — no missed appointments</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_appt_missed_how_many() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">How many appointments have they missed?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_appt_missed_one)">One missed appointment</button>' +
+      '<button onclick="go(screen_appt_missed_two)">Two or more missed appointments</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_appt_missed_one() {
+    show(
+      backBtn() +
+      '<div class="result-title">2-week wait required</div>' +
+      '<div class="info-box">After 1 missed appointment, the voter must wait 2 weeks before scheduling a new one. They can also walk in during this time.</div>' +
+      '<div class="note">Remind the voter of the no-show policy upfront to avoid future restrictions.</div>' +
+      '<button onclick="go(screen_appt_schedule)">2 weeks have passed — continue to schedule</button>' +
+      resetBtn()
+    );
+  }
+
+  function screen_appt_missed_two() {
+    show(
+      backBtn() +
+      '<div class="result-title">Walk-in only</div>' +
+      '<div class="info-box">After 2 missed appointments, the voter must use walk-in only. No further appointments can be scheduled.</div>' +
+      '<div class="doc-label">Walk-in hours</div>' +
+      '<div class="doc-item">✓ Most DMV offices: 8 AM – 5 PM, Monday–Friday</div>' +
+      '<div class="doc-item">✓ Walk-ins available all day</div>' +
+      '<div class="note">Note: Schedules may change during summer.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_appt_schedule() {
+    show(
+      backBtn() +
+      '<div class="result-title good">Ready to schedule a DMV appointment</div>' +
+      '<div class="doc-label">Email Janet Sie with the following</div>' +
+      '<div class="email-box">' +
+        '<strong>To:</strong> janet.volunteer@voteriders.org<br><br>' +
+        '<strong>Include:</strong><br>' +
+        '• Voter\'s full name<br>' +
+        '• Date of birth<br>' +
+        '• Phone number<br>' +
+        '• Preferred DMV location (find using voter\'s zip code — do NOT include zip code in email)' +
+      '</div>' +
+      '<div class="doc-label">DMV office hours</div>' +
+      '<div class="doc-item">✓ Most offices: 8 AM – 5 PM, Monday–Friday</div>' +
+      '<div class="doc-item">✓ Appointments available until noon</div>' +
+      '<div class="doc-item">✓ Walk-ins available all day</div>' +
+      '<div class="note">DMV allows a maximum of 2 appointments per voter. Remind the voter of this upfront.</div>' +
+      '<div class="note">Note: Schedules may change during summer.</div>' +
+      resetBtn()
+    );
+  }
+
+  // ── VOTER REGISTRATION & VOTING RIGHTS PATH ───────────────────────
+
+  function screen_vr_what() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">What does the voter need help with?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_vr_check_status)">Check registration status</button>' +
+      '<button onclick="go(screen_vr_how_to_register)">How to register to vote</button>' +
+      '</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_vr_felony)">Voting rights after a felony conviction</button>' +
+      '<button onclick="go(screen_vr_no_id_polls)">Voter has no ID at the polls</button>' +
+      '</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_vr_free_id)">Get a free Voter Photo ID</button>' +
+      '<button onclick="go(screen_vr_problems)">Problems at the polls</button>' +
+      '</div>'
+    );
+  }
+
+  // ── Check Registration Status ──
+  function screen_vr_check_status() {
+    show(
+      backBtn() +
+      '<div class="result-title">Check voter registration status</div>' +
+      '<div class="info-box">Use the <strong>NC Voter Lookup Tool</strong> to check registration status, polling location, and sample ballot.</div>' +
+      '<div class="doc-label">Verify the following</div>' +
+      '<div class="doc-item">✓ Voter is registered</div>' +
+      '<div class="doc-item">✓ Address is current</div>' +
+      '<div class="doc-item">✓ Polling location is correct</div>' +
+      '<div class="note">Use VoteRiders TurboVote at VoteRiders.org/Vote to sign up voters (with permission) for registration info, ID information, and election reminders.</div>' +
+      resetBtn()
+    );
+  }
+
+  // ── How to Register ──
+  function screen_vr_how_to_register() {
+    show(
+      backBtn() +
+      '<div class="ask-label">Ask the client</div>' +
+      '<div class="question">Has the voter ever been an NC DMV customer?</div>' +
+      '<div class="btn-group">' +
+      '<button onclick="go(screen_vr_register_online)">Yes — they have been an NC DMV customer</button>' +
+      '<button onclick="go(screen_vr_register_inperson)">No — they have not been an NC DMV customer</button>' +
+      '</div>'
+    );
+  }
+
+  function screen_vr_register_online() {
+    show(
+      backBtn() +
+      '<div class="result-title">Can register online</div>' +
+      '<div class="info-box">Online registration is available for voters who have been an NC DMV customer. Registration is also offered during DMV transactions.</div>' +
+      '<div class="note">Refer to the NC State Board of Elections guide for deadlines, forms, and FAQ.</div>' +
+      resetBtn()
+    );
+  }
+
+  function screen_vr_register_inperson() {
+    show(
+      backBtn() +
+      '<div class="result-title">Must register by mail or in person</div>' +
+      '<div class="info-box">Voters who have not been NC DMV customers must register by mail or in person at their local board of elections office.</div>' +
+      '<div class="note">Refer to the NC State Board of Elections guide for deadlines, forms, and FAQ.</div>' +
+      resetBtn()
+    );
+  }
+
+  // ── Felony Conviction ──
+  function screen_vr_felony() {
+    show(
+      backBtn() +
+      '<div class="result-title">Voting rights after a felony conviction</div>' +
+      '<div class="info-box">VoteRiders assists citizens 16 and older even during parole or probation.</div>' +
+      '<div class="doc-label">NC Policy</div>' +
+      '<div class="doc-item">✓ Rights are lost during sentence, post-release supervision, probation, and parole</div>' +
+      '<div class="doc-item">✓ Rights are automatically RESTORED upon completion of post-release supervision</div>' +
+      '<div class="doc-label">Questions about eligibility</div>' +
+      '<div class="doc-item">✓ Forward Justice Helpline: 877-880-VOTE (877-880-8683)</div>' +
+      resetBtn()
+    );
+  }
+
+  // ── No ID at the Polls ──
+  function screen_vr_no_id_polls() {
+    show(
+      backBtn() +
+      '<div class="result-title">Voter can still cast a ballot without ID</div>' +
+      '<div class="info-box">All voters can cast a ballot even without accepted ID by completing an <strong>ID Exception Form</strong> at the polls.</div>' +
+      '<div class="doc-label">Steps at the polls</div>' +
+      '<div class="doc-item">✓ Complete the ID exception form at the polling location</div>' +
+      '<div class="doc-item">✓ Indicate the reason for not having ID</div>' +
+      '<div class="doc-item">✓ Cast their ballot</div>' +
+      '<div class="note">Make sure voters know this right!</div>' +
+      resetBtn()
+    );
+  }
+
+  // ── Free Voter Photo ID ──
+  function screen_vr_free_id() {
+    show(
+      backBtn() +
+      '<div class="result-title">Free Voter Photo ID from county board of elections</div>' +
+      '<div class="doc-item">✓ Available year-round during regular business hours</div>' +
+      '<div class="doc-item">✓ No documents required</div>' +
+      '<div class="doc-item">✓ Same-day issuance if already registered in the county</div>' +
+      '<div class="note">NOT available between the last day of early voting and Election Day.</div>' +
+      '<div class="info-box">If not yet registered: register in person and the Voter ID will be mailed after registration is confirmed.</div>' +
+      resetBtn()
+    );
+  }
+
+  // ── Problems at the Polls ──
+  function screen_vr_problems() {
+    show(
+      backBtn() +
+      '<div class="result-title">Problems at the polls</div>' +
+      '<div class="info-box">Call the <strong>Election Protection Hotline</strong> — available for voting issues, legal questions, and reporting recurring issues to the Board of Elections.</div>' +
+      '<div class="doc-label">Election Protection Hotline</div>' +
+      '<div class="doc-item">✓ 888-OUR-VOTE (888-687-8683)</div>' +
+      '<div class="doc-item">✓ Team of lawyers ready to help</div>' +
+      '<div class="doc-item">✓ You can call on behalf of a voter</div>' +
+      resetBtn()
+    );
+  }
+
   // ── LAUNCH ─────────────────────────────────────────────────────────
   screen_start();
 
 </script>
 </body>
 </html>
+NCVIDA Tool June 8.html
+Displaying NCVIDA Tool June 8.html.
